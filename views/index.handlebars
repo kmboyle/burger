@@ -1,0 +1,17 @@
+<h1>Devour the Burger</h1>
+
+<h3>Add a Burger or Devour one!</h3>
+
+<ul>
+  {{#each burgerArray}}
+  	<li>
+  	   <p>ID: {{this.id}}</p>
+       <p>Wish: {{this.burger_name}}</p>
+	   <form action="/{{this.id}}?_method=DELETE" method='POST'>
+	   <button type = "delete">DELETE</button>
+	   </form>
+  	</li>
+  {{/each}}
+</ul>
+
+<button type = "submit">ADD A BOY-GAH</button>

@@ -1,0 +1,2 @@
+INSERT INTO burgers (burger_name) VALUES ("CHEESY BURGER"),
+("BACON BURGER"),("SLOPPY BURGER"),("HUGE BURGER");
