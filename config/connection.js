@@ -1,10 +1,10 @@
 var mysql = require('mysql');
-var connetion;
+var connection;
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-    var con = mysql.createConnection({
+    connection = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "438278kmb",
@@ -12,9 +12,11 @@ if (process.env.JAWSDB_URL) {
     });
 };
 
-con.connect(function(err) {
+connection.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
 });
 
-module.exports = con;
+connection.connect();
+
+module.exports = connection;
