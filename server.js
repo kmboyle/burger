@@ -7,7 +7,7 @@ var Handlebars = require('handlebars');
 
 var app = express();
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -53,5 +53,7 @@ app.put("/:id", function(req, res) {
     })
 })
 
-app.listen(PORT);
-console.log("Server listening on port " + PORT);
+app.listen(PORT, function() {
+
+    console.log("Server listening on port " + PORT);
+});
