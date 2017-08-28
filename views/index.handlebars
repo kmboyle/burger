@@ -1,17 +1,72 @@
-<h1>Devour the Burger</h1>
+<h1><strong>Devour the Burger, yum</strong></h1>
 
 <h3>Add a Burger or Devour one!</h3>
 
-<ul>
-  {{#each burgerArray}}
-  	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Wish: {{this.burger_name}}</p>
-	   <form action="/{{this.id}}?_method=DELETE" method='POST'>
-	   <button type = "delete">DELETE</button>
-	   </form>
-  	</li>
-  {{/each}}
-</ul>
+<h4><strong><u>de·vour:</u></strong><em> dəˈvou(ə)</em> <em><strong> verb</strong></em>
+eat (food or prey) hungrily or quickly.
+"he devoured half of his burger in one bite"
+synonyms:	eat hungrily, eat greedily, gobble (up/down), guzzle, gulp (down), bolt (down), gorge oneself on, wolf (down), feast on, consume, eat up</h4>
 
-<button type = "submit">ADD A BOY-GAH</button>
+<img src = "../assets/img/burger.jpg">
+<hr>
+<div class = "row well well-sm">
+<div class = "col-md-6 well well-sm ">
+ {{#each burgerArray}}
+ {{#unless this.devoured}}
+ <div class ="row">
+	<div class = "col-md-6">		
+			 <textarea rows="2" cols="30" readonly>{{ inc @index }}: {{this.burger_name}}</textarea>
+	</div>		
+	<div class = "col-md-6">
+	   <form action="/{{this.id}}?_method=PUT" method='POST'>
+	   <button class="btn btn-secondary btn-sm" type = "delete">DEVOUR IT!</button>
+	   </form>
+	</div>
+			</div>
+			{{/unless}}
+			{{/each}}
+			</div>
+	
+<div class = "col-md-6 well well-sm">
+  {{#each burgerArray}}
+				{{#if this.devoured}}
+			<div class = "expiredBurger">
+  	   <textarea rows="2" cols="30" disabled>{{this.id}} {{this.burger_name}}</textarea>
+			</div>
+			{{/if}}
+	{{/each}}
+	
+</div>
+  
+</div>
+<br><br>
+<form action="/" method="POST">
+<div class = "row">
+	<div class = "col-md-12">
+<textarea rows="4" cols="50" type="text" name= "newBurger"></textarea>
+	</div>
+	<div class = "col-md-12">
+<button  class="btn btn-primary" type = "submit">ADD A BOY-GAH</button>
+	</div>
+</form>
+</div>	
+<footer class = "footer">
+<div class="container">
+      <div class="page-header">
+        <h1>Try not to Drool!</h1>
+      </div>
+			<div class ="img img-fluid max-width: 100% height: auto">
+      <img src = "../assets/img/b1.jpg">
+			<img src = "../assets/img/b2.jpg">
+			<img src = "../assets/img/b3.jpg">
+			<img src = "../assets/img/b4.jpg">
+			<img src = "../assets/img/b5.jpg">
+			<img src = "../assets/img/b6.jpg">
+			<img src = "../assets/img/b7.jpg">
+			<img src = "../assets/img/b8.jpg">
+			<img src = "../assets/img/b9.jpg">
+			</div>
+    </div>
+</footer>
+
+
