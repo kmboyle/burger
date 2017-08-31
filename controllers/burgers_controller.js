@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
-        //creating an object to holdeach object from the database
+        //creating an object to hold each object from the database
         var burgerObj = {
             burgerArray: data
         };
