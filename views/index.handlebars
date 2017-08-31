@@ -7,7 +7,7 @@ eat (food or prey) hungrily or quickly.
 "he devoured half of his burger in one bite"
 synonyms:	eat hungrily, eat greedily, gobble (up/down), guzzle, gulp (down), bolt (down), gorge oneself on, wolf (down), feast on, consume, eat up</h4>
 
-<img src = "../assets/img/burger.jpg">
+<img src = "../assets/img/burger.jpg" >
 <hr>
 <div class = "row well well-sm">
 <div class = "col-md-6">
@@ -18,8 +18,14 @@ synonyms:	eat hungrily, eat greedily, gobble (up/down), guzzle, gulp (down), bol
 			 <textarea rows="3" cols="30" readonly>{{ inc @index }}: {{this.burger_name}} 
 	
 			 </textarea>
-	</div>		
-	{{> burgers/delete-burger}}
+	</div>	
+
+		<div class = "col-md-6">
+	   <form action="/{{this.id}}?_method=PUT" method='POST'>
+	   <input type ="hidden" name="devoured">
+	   <button class="btn btn-secondary btn-sm" type = "submit">DEVOUR IT!</button>
+	   </form>
+	</div>
 			</div>
 			{{/unless}}
 			{{/each}}
@@ -33,12 +39,8 @@ synonyms:	eat hungrily, eat greedily, gobble (up/down), guzzle, gulp (down), bol
 		<div class = "col-md-6 expiredBurger">
   	   	<textarea rows="2" cols="30" name="remove" disabled>{{ inc @index }}: {{this.burger_name}}</textarea>
 		</div>
+	{{> burgers/delete-burger}}
 	
-		<div class = "col-md-6">
-		<form action="/{{this.id}}?_method=DELETE" method='POST'>	 
-	   <button class="btn btn-secondary btn-sm" type = "submit"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Remove</button>
-	    </form>	
-		</div>
 	</div>
     {{/if}}
    {{/each}}
@@ -62,7 +64,7 @@ synonyms:	eat hungrily, eat greedily, gobble (up/down), guzzle, gulp (down), bol
       <div class="page-header">
         <h1>Try not to Drool!</h1>
       </div>
-<div class ="img img-fluid max-width: 100% height: auto">
+<div class ="img img-fluid img-responsive max-width: 100% height: auto">
       <img src = "../assets/img/b1.jpg">
 			<img src = "../assets/img/b2.jpg">
 			<img src = "../assets/img/b3.jpg">
